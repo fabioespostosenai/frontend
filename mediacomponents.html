@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Componentes de Media Queries</title>
+    <style>
+        img{
+            width: 50%;
+           height: auto;
+           display: flex; 
+        }
+       *{
+        box-sizing: border-box;
+       }
+        .stackmenu{
+            background-color: darkblue;
+            overflow: hidden;
+
+        }
+
+        .stackmenu a{
+            float: left;
+            display: block;
+            color: lightyellow;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .stackmenu a:hover{
+            background-color: lightyellow;
+            color: darkblue;
+        }
+      
+        /* Em telas de 600px ou menores fazer
+        com que o link do menu fique empilhado*/
+        @media only screen and(max-width: 600px){
+            .stackmenu a{
+                float: none;
+                width: 100%;
+            }
+        }
+        
+
+        /*As 4 colunas deverão ficar uma ao lado da outra
+        a largura deverá obter uma porcentagem para 4 partes
+        espaçamento interno em todas as direções de 20px
+        */
+        .coluna{
+            float: left;
+            width: 25%;
+            padding: 20px;
+            
+
+        }
+       
+        /* Em telas de 992px ou menores a partir de 4 colunas para 2 colunas*/
+        @media screen and (max-width: 992px) {
+            .coluna{
+                width: 50%;
+            }
+        }
+        /*Em telas de 600px ou menores de 2 colunas para empilhadas*/
+        @media screen and (max-width: 600px){
+            .coluna{
+                width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Menu Responsivo de Navegação</h1>
+    <p>Ao redimensionar a janela do navegador o efeito será aplicado
+        quando a tela for menor que 600px. O Menu de Navegação será
+        mostrado verticalmente(empilhado) ao invés de ser mostrado
+        na horizontal.
+    </p>
+    <div class="stackmenu">
+        <a href="#">Link1</a>
+        <a href="#">Link2</a>
+        <a href="#">Link3</a>
+    </div>
+
+    <h1>Colunas Responsivas</h1>
+    <p>Ao redimensionar o navegador, em telas que são de 992px ou menores, as colunas inicialmente em 4 partes
+        passarão para 2 colunas. Em telas de 600px ou menos, as colunas serão empilhadas.
+    </p>
+        <!--Insira 1 imagem em cada coluna-->
+    <div class="linha">
+        <div class="coluna" >
+            <h2>Coluna 1</h2>
+            <img src="hungria.png" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="coluna" >
+            <h2>Coluna 2</h2>
+            <img src="romenia.png" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="coluna" >
+            <h2>Coluna 3</h2>
+            <img src="eslovaquia.png" alt="">
+            Lorem ipsum dolor sit amet.
+        </div>
+        <div class="coluna" >
+            <h2>Coluna 4</h2>
+            <img src="eslovenia.png" alt="">
+            Lorem ipsum dolor sit amet.
+        </div>
+    </div>
+
+</body>
+</html>
